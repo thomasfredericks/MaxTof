@@ -1,0 +1,34 @@
+{
+	"pattrstorage" : 	{
+		"name" : "u214000336",
+		"slots" : 		{
+			"1" : 			{
+				"id" : 1,
+				"data" : 				{
+					"tof.gl.slab::file" : [ "td.kaleido.jxs" ],
+					"tof.gl.slab::settings" : [ 						{
+
+						}
+ ],
+					"tof.gl.context::fps" : [ 60.0 ],
+					"tof.gl.context::active" : [ 1 ],
+					"tof.gl.context::antialias" : [ 1 ],
+					"tof.gl.context::ui_listen" : [ 0 ],
+					"tof.gl.context::ortho" : [ 0 ],
+					"tof.gl.context::bg_color" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"tof.gl.context::position" : [ 0.0, 0.0, 2.0 ],
+					"tof.gl.context::rotatexyz" : [ 0.0, 0.0, -0.0 ],
+					"tof.gl.context::locklook" : [ 0 ],
+					"tof.gl.context::floating" : [ 1 ],
+					"tof.gl.context::fsmenubar" : [ 0 ],
+					"tof.gl.context::gamepad::device" : [ "Generic   USB  Joystick  " ],
+					"tof.pattrstorage::auto_save" : [ 1 ]
+				}
+
+			}
+
+		}
+
+	}
+
+}
