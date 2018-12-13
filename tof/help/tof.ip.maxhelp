@@ -2,14 +2,15 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 7,
-			"minor" : 3,
-			"revision" : 4,
+			"major" : 8,
+			"minor" : 0,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 92.0, 135.0, 640.0, 480.0 ],
+		"classnamespace" : "box",
+		"rect" : [ 92.0, 135.0, 615.0, 299.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,14 +39,48 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-8",
+					"id" : "obj-11",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 309.0, 28.0, 195.0, 20.0 ],
+					"text" : "Output a specific adapter's IP"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-10",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 77.0, 61.0, 150.0, 33.0 ],
+					"text" : "Output all active IP addresses"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-7",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 313.0, 256.0, 217.0, 22.0 ],
-					"style" : "",
-					"text" : "wlan1 192.168.1.106"
+					"patching_rect" : [ 432.0, 67.0, 32.0, 22.0 ],
+					"text" : "eth1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 482.5, 61.0, 29.5, 22.0 ],
+					"text" : "lo"
 				}
 
 			}
@@ -55,8 +90,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 126.0, 256.0, 34.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 246.0, 215.0, 34.0, 22.0 ],
 					"text" : "print"
 				}
 
@@ -68,8 +102,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 367.0, 205.0, 37.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 246.0, 168.0, 37.0, 22.0 ],
 					"text" : "tof.ip"
 				}
 
@@ -81,8 +114,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 387.0, 97.0, 34.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 369.0, 61.0, 34.0, 22.0 ],
 					"text" : "eth0"
 				}
 
@@ -94,8 +126,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 327.0, 97.0, 42.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 309.0, 61.0, 42.0, 22.0 ],
 					"text" : "wlan1"
 				}
 
@@ -107,42 +138,22 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 126.0, 127.0, 24.0, 24.0 ],
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-24",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 126.0, 205.0, 37.0, 22.0 ],
-					"style" : "",
-					"text" : "tof.ip"
+					"parameter_enable" : 0,
+					"patching_rect" : [ 43.0, 61.0, 24.0, 24.0 ]
 				}
 
 			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-8", 1 ],
+					"destination" : [ "obj-6", 0 ],
 					"source" : [ "obj-2", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-6", 0 ],
-					"source" : [ "obj-24", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-24", 0 ],
+					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-26", 0 ]
 				}
 
@@ -157,15 +168,29 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-4", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-7", 0 ]
 				}
 
 			}
  ],
 		"dependency_cache" : [ 			{
 				"name" : "tof.ip.maxpat",
-				"bootpath" : "~/OneDrive/Max 7/Packages/tof74/patchers",
-				"patcherrelativepath" : "../patchers",
+				"bootpath" : "D:/tof/Documents/Max 8/Packages/tof/patchers",
+				"patcherrelativepath" : "../../../../Documents/Max 8/Packages/tof/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}

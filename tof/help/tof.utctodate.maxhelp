@@ -2,13 +2,14 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 7,
-			"minor" : 3,
-			"revision" : 4,
+			"major" : 8,
+			"minor" : 0,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
+		"classnamespace" : "box",
 		"rect" : [ 100.0, 100.0, 828.0, 622.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -38,14 +39,48 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-13",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 464.0, 99.0, 150.0, 20.0 ],
+					"text" : "UTC times"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 595.0, 121.0, 29.5, 22.0 ],
+					"text" : "0"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 517.5, 231.5, 167.0, 33.0 ],
+					"text" : "Converts UTC time to date and time formats"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 54.0, 457.0, 421.0, 22.0 ],
-					"style" : "",
-					"text" : "20:30:50"
+					"patching_rect" : [ 54.333332061767578, 333.0, 421.0, 22.0 ],
+					"text" : "19:00:00"
 				}
 
 			}
@@ -55,8 +90,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 593.0, 331.0, 150.0, 20.0 ],
-					"style" : "",
+					"patching_rect" : [ 526.0, 405.0, 150.0, 20.0 ],
 					"text" : "timezone offset"
 				}
 
@@ -68,9 +102,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 19.0, 350.0, 204.0, 22.0 ],
-					"style" : "",
-					"text" : "\"Mon Jul 24 2017\""
+					"patching_rect" : [ 252.0, 297.0, 204.0, 22.0 ],
+					"text" : "\"Wed Dec 31 1969\""
 				}
 
 			}
@@ -81,9 +114,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 536.0, 331.0, 50.0, 22.0 ],
-					"style" : "",
-					"text" : "240"
+					"patching_rect" : [ 464.0, 405.0, 50.0, 22.0 ],
+					"text" : "300"
 				}
 
 			}
@@ -94,9 +126,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 286.0, 389.0, 234.0, 22.0 ],
-					"style" : "",
-					"text" : "2017 7 24 20 30 50"
+					"patching_rect" : [ 260.666656494140625, 367.0, 234.0, 22.0 ],
+					"text" : "1969 12 31 19 0 0"
 				}
 
 			}
@@ -107,8 +138,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 112.0, 133.0, 77.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 396.0, 121.0, 77.0, 22.0 ],
 					"text" : "1500912000"
 				}
 
@@ -120,8 +150,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 208.0, 133.0, 77.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 492.0, 121.0, 77.0, 22.0 ],
 					"text" : "1500942650"
 				}
 
@@ -133,8 +162,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 153.0, 249.0, 77.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 437.0, 237.0, 77.0, 22.0 ],
 					"text" : "tof.utctodate"
 				}
 
@@ -171,6 +199,13 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-11", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-4", 0 ]
 				}
 
@@ -185,15 +220,15 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "tof.utctodate.maxpat",
-				"bootpath" : "~/OneDrive/Max 7/Packages/tof74/patchers",
-				"patcherrelativepath" : "../patchers",
+				"bootpath" : "D:/tof/Documents/Max 8/Packages/tof/patchers",
+				"patcherrelativepath" : "../../../../Documents/Max 8/Packages/tof/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "tof.utctodate.js",
-				"bootpath" : "~/Documents/Max 7/Packages/tof74/javascript",
-				"patcherrelativepath" : "../../../../../Documents/Max 7/Packages/tof74/javascript",
+				"bootpath" : "D:/tof/Documents/Max 8/Packages/tof/javascript",
+				"patcherrelativepath" : "../../../../Documents/Max 8/Packages/tof/javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
